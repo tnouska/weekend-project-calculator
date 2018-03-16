@@ -38,7 +38,7 @@ Anything else you can think of!
 
 Progress
 
-- [ ] make sure server is up and running
+- [x] make sure server is up and running
 - [ ] add inputs into index.html
 - [ ] set up and test $.ajax GET and POST
 - [ ] create client side logic for taking in user input
