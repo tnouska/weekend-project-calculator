@@ -40,7 +40,7 @@ Progress
 
 - [x] make sure server is up and running
 - [x] add inputs into index.html
-- [ ] set up and test $.ajax GET and POST
+- [x] set up and test $.ajax GET and POST
 - [ ] create client side logic for taking in user input
 - [ ] create server side logic for handling json object from client
 - [ ] orginize data that is to be sent back to client
