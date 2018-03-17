@@ -8,12 +8,44 @@ app.listen(PORT, ()=> {
 console.log('server is running on ', PORT);
 });
 
+calcHistory = []
+//app.post below
 app.post('/calc', (req, res) => {
     let calc = req.body;
     console.log(calc);
-    let firstVal = calc.valOne;
-    let secVal = calc.valTwo;
-    console.log(secVal);
-    console.log(firstVal);
+    let firstVal = parseInt(calc.valOne);
+    let secVal = parseInt(calc.valTwo);
+    let operator = calc.operation
+    console.log(operator);
+    
+    switch (operator) {
+        case '+':
+            answer = firstVal + secVal
+            console.log(answer);            
+            break;
+    
+        case '-':
+            answer = firstVal - secVal
+            console.log(answer);
+            break;
+        case '*':
+            answer = firstVal * secVal
+            console.log(answer);
+            break;
+        case '/':
+            answer = firstVal / secVal
+            console.log(answer);
+            break;
+        default:
+            answer = 'error'
+            console.log(answer);
+    }
+    calc.answer = answer
+    calcHistory.push(calc)    
     res.sendStatus(200);
+
+})
+// app.get below
+app.get('/calc', (req, res)=>{
+    res.send(calcHistory)
 })

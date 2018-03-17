@@ -41,9 +41,9 @@ Progress
 - [x] make sure server is up and running
 - [x] add inputs into index.html
 - [x] set up and test $.ajax GET and POST
-- [ ] create client side logic for taking in user input
-- [ ] create server side logic for handling json object from client
-- [ ] orginize data that is to be sent back to client
+- [x] create client side logic for taking in user input
+- [x] create server side logic for handling json object from client
+- [x] orginize data that is to be sent back to client
 - [ ] on client take data from server and append DOM with history
 - [ ] on client take data that was received from server and append correct calculation to DOM
 hard mode:

@@ -3,6 +3,7 @@ $(document).ready(readyNow);
 function readyNow() {
     console.log('document ready');
     eventHandlers();
+    getHistory();
 }
 function eventHandlers() {
     $('#addButton').on('click', add)
@@ -16,7 +17,7 @@ let operator = 0;
 function userInput() {
     let firstInput = $('#firstValue').val();
     let secondInput = $('#secondValue').val();
-    let calculationToSend = { valOne: firstInput, valTwo: secondInput }
+    let calculationToSend = { valOne: firstInput, valTwo: secondInput, operation: operator}
     $.ajax({
         type: 'POST',
         data: calculationToSend,
@@ -26,20 +27,32 @@ function userInput() {
     });
 
     }
-
+// operator functions
 function add() {
     operator = '+'
-    console.log(operator);
 }
 function subtract() {
     operator = '-'   
-    console.log(operator);
 }
 function multiply() {
     operator = '*'
-    console.log(operator);
 }
 function divide() {
     operator = '/'
-    console.log(operator);
+}
+// append to dom functions
+function getHistory() {
+    $.ajax({
+        type: 'GET',
+        url: '/calc'
+    }).done(function(response){
+        appendToDom(response);
+    });
+}
+
+function appendToDom(calcHistory) {
+    $('#calcTable').empty()
+    for (let equation of calcHistory)
+      let tr = $('<tr></tr>');
+
 }
