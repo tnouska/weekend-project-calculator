@@ -24,6 +24,7 @@ function userInput() {
         url: '/calc'
     }).done(function (response) {
         console.log('SUCCESS!');
+        getHistory();
     });
 
     }
@@ -52,7 +53,11 @@ function getHistory() {
 
 function appendToDom(calcHistory) {
     $('#calcTable').empty()
-    for (let equation of calcHistory)
-      let tr = $('<tr></tr>');
-
+    for (let calc of calcHistory) {
+        let tr = $('<tr></tr>');
+        tr.append('<td> ' + calc.valOne + ' ' + calc.operation + ' ' + calc.valTwo + ' </td>');
+        $('#calcTable').append(tr);
+        $('#answerField').empty();
+        $('#answerField').append(calc.answer);
+    }
 }

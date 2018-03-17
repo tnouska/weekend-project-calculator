@@ -9,6 +9,10 @@
 </head>
 <body>
     <h1>CALCULATOR</h1>
+    <div id="answerField">
+        <!-- will banswerFielde appended later -->
+    </div> 
+    </h2>
     <div>
         <input type="text" id="firstValue" class="userInput">
         <input type="text" id="secondValue" class="userInput">
@@ -21,10 +25,16 @@
         <div id="equalButton" class="button">=</div>
     </div>
     <div>
-        <h4>Calculation History</h4>
-        <div id="calcTable">
-            <!-- will be appended to later -->
-        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Calculation History</th>
+                </tr>
+            </thead>
+            <tbody id="calcTable">
+                <!-- calculations will be appended here -->
+            </tbody>
+        </table>
     </div>
 </body>
 </html>

@@ -12,36 +12,30 @@ calcHistory = []
 //app.post below
 app.post('/calc', (req, res) => {
     let calc = req.body;
-    console.log(calc);
     let firstVal = parseInt(calc.valOne);
     let secVal = parseInt(calc.valTwo);
     let operator = calc.operation
-    console.log(operator);
     
     switch (operator) {
         case '+':
             answer = firstVal + secVal
-            console.log(answer);            
             break;
-    
         case '-':
             answer = firstVal - secVal
-            console.log(answer);
             break;
         case '*':
             answer = firstVal * secVal
-            console.log(answer);
             break;
         case '/':
             answer = firstVal / secVal
-            console.log(answer);
             break;
         default:
             answer = 'error'
-            console.log(answer);
     }
     calc.answer = answer
-    calcHistory.push(calc)    
+    calcHistory.push(calc)  
+    console.log(calcHistory);
+      
     res.sendStatus(200);
 
 })
