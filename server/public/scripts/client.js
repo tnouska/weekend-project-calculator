@@ -11,6 +11,7 @@ function eventHandlers() {
     $('#multButton').on('click', multiply)
     $('#divButton').on('click', divide)
     $('#equalButton').on('click', userInput)
+    $('.op').on('click', opColor)
 }
 let operator = 0;
 
@@ -60,4 +61,8 @@ function appendToDom(calcHistory) {
         $('#answerField').empty();
         $('#answerField').append(calc.answer);
     }
+}
+
+function opColor() {
+    $(this).toggleClass('op op2');
 }
