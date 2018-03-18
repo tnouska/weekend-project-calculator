@@ -22,11 +22,15 @@ function eventHandlers() {
 function userInput() {
     let firstInput = $('#firstValue').val();
     let secondInput = $('#secondValue').val();
+    //take in input
     let calculationToSend = { valOne: firstInput, valTwo: secondInput, operation: operator};
+    // create object using inputs and operator
     $('.num2').toggleClass('num2 num');
     $('.op2').toggleClass('op2 op');
+    // switches button class 
     $('#firstValue').val(null);
     $('#secondValue').val(null);
+    // sets inputs to nothing
     $.ajax({
         type: 'POST',
         data: calculationToSend,
@@ -70,13 +74,14 @@ function appendToDom(calcHistory) {
         $('#answerField').append(calc.answer);
     }
 }
-
+// button behavior function
 function opColor() {
+    $(this).parent().contents().toggleClass('op op2')
     $(this).toggleClass('op op2');
     $('.num').toggleClass('num num2')
 
 }
-
+//taking buttons presses and appending to first and second value input. 
 function appendValue1() {
     if ($(this).val() === '.' && dot === 0) {
         dot++;

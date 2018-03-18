@@ -11,16 +11,13 @@
 .op{
     background-color: lightsteelblue
 }
-.op2{
+.op:active{
     background-color: steelblue
 }
-.num{
+.num, .num2{
     background-color : peachpuff;
 }
-.num2{
-    background-color: peachpuff;
-}
-.num:active{
+.num:active, .num2:active{
     background-color: peru
 }
 .equal:active {
