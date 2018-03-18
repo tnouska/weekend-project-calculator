@@ -17,6 +17,9 @@
 .num{
     background-color : peachpuff;
 }
+.num2{
+    background-color: peachpuff;
+}
 .num:active{
     background-color: peru
 }

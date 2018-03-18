@@ -12,8 +12,8 @@ calcHistory = []
 //app.post below
 app.post('/calc', (req, res) => {
     let calc = req.body;
-    let firstVal = parseInt(calc.valOne);
-    let secVal = parseInt(calc.valTwo);
+    let firstVal = parseFloat(calc.valOne);
+    let secVal = parseFloat(calc.valTwo);
     let operator = calc.operation
     
     switch (operator) {
