@@ -18,6 +18,7 @@ function eventHandlers() {
     $('#buttonTable').on('click', '.num', appendValue1)
     $('#buttonTable').on('click', '.num2', appendValue2)
     $('#calcTable').on('click', '#oldCalc', answerHistory)
+    $('#clearButton').on('click', clearHistory)
 }
 
 function userInput() {
@@ -112,4 +113,11 @@ function answerHistory() {
     let history = $(this).data('answer')
     $('#answerField').empty()
     $('#answerField').append(history)
+}
+
+function clearHistory() {
+    $.ajax({
+        type: 'DELETE',
+        
+    })
 }

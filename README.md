@@ -47,10 +47,9 @@ Progress
 - [x] on client take data from server and append DOM with history
 - [x] on client take data that was received from server and append correct calculation to DOM
 hard mode:
-- [ ] convert the two input fields into 10 buttons
-    - [ ] maybe add parenthases as buttons???
+- [x] convert the two input fields into 10 buttons
 strech goal:
-- [ ] logic on client to click on old equation in history and have equation be 
+- [x] logic on client to click on old equation in history and have equation be 
 sent to server to be calculated and then back to client to be displayed.
 - [ ] "DELETE" request to remove history from array and update calc history on DOM
 - [ ] deploy onto HEROKU
