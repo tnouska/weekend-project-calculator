@@ -17,6 +17,7 @@ function eventHandlers() {
     $('.op').on('click', opColor)
     $('#buttonTable').on('click', '.num', appendValue1)
     $('#buttonTable').on('click', '.num2', appendValue2)
+    $('#calcTable').on('click', '#oldCalc', answerHistory)
 }
 
 function userInput() {
@@ -39,7 +40,6 @@ function userInput() {
         console.log('SUCCESS!');
         getHistory();
     });
-
     }
 // operator functions
 function add() {
@@ -67,8 +67,14 @@ function getHistory() {
 function appendToDom(calcHistory) {
     $('#calcTable').empty()
     for (let calc of calcHistory) {
-        let tr = $('<tr></tr>');
-        tr.append('<td> ' + calc.valOne + ' ' + calc.operation + ' ' + calc.valTwo + ' </td>');
+        let tr = $('<tr id="oldCalc"></tr>').data('answer', calc.answer);
+        if (calc.valOne === '') {
+            tr.append('<td>No first value</td>')
+        } else if (calc.valTwo === ''){
+            tr.append('<td>No second value</td>') 
+        } else{
+            tr.append(calc.valOne + ' ' + calc.operation + ' ' + calc.valTwo);
+        }
         $('#calcTable').append(tr);
         $('#answerField').empty();
         $('#answerField').append(calc.answer);
@@ -101,4 +107,9 @@ function appendValue2() {
     } else {
         $('#secondValue').val($('#secondValue').val() + $(this).val());
     }
+}
+function answerHistory() {
+    let history = $(this).data('answer')
+    $('#answerField').empty()
+    $('#answerField').append(history)
 }
